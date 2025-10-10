@@ -1,0 +1,34 @@
+# Simulation outputs
+sim/*.vcd
+sim/*.fsdb
+sim/*.log
+sim/simv*
+sim/work/
+
+# Vivado build outputs
+*.jou
+*.log
+*.str
+*.xpr
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.srcs/
+*.sim/
+*.xdc
+impl/*.bit
+impl/*.dcp
+
+# Verdi and VCS
+verdiLog/
+*.key
+*.vpd
+csrc/
+DVEfiles/
+
+# General
+*.swp
+*.bak
+*.tmp
+*.DS_Store
