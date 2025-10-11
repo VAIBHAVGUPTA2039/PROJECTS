@@ -1,10 +1,14 @@
 # Basic 4 bit Full Adder
 ## About
+The main aim of this project was to get familiar with Synopsys VCS and Verdi, and to learn how to use command-line workflows with Xilinx Vivado instead of relying on its GUI.
+In this setup:
 
-The main aim of this project was to get familiar with VCS and verdi, and use commands to interact with Xilinx Vivado rather than using the GUI. This was necessary because the simulation of the design files was done using VCS and Verdi, meaning that the only role left for Xilinx Vivado is the Synthesis, Implementation, and to generate the bitstream for the specific part using the design files and the constraint file (.sdc)
+- VCS and Verdi are used for simulation and debugging.
+
+- Vivado is used only for synthesis, implementation, and bitstream generation for the target FPGA device.
 
 ## About the Files and Structure
-I have decided to follow a specific structure for each of my Projects, this was Suggested to me by ChatGPT, this is necessary to ensure a clean folder layout for easy communication between the different tools and to ensure readiblity later on. The file structure is as described below
+I’ve decided to follow a consistent folder structure across all projects. This ensures a clean and maintainable layout, simplifies tool integration, and improves readability later on.
 
 - src: This folder consists of my src files meaning my design files
 - tb: This folder consists of my testbench files
@@ -13,8 +17,10 @@ I have decided to follow a specific structure for each of my Projects, this was 
 ## Workflow
 I followed the following steps to work with the different tools
 
-1. First write the design and testbench files using a test editor, may it be gedit or vi editor.
-2. Compile and generate executable using the following command
+1. ### Write design and testbench files
+First write the design and testbench files using a test editor, may it be gedit or vi editor.
+2. ### Compile and generate the simulation executable
+ Compile and generate executable using the following command
 ```
 vcs -full64 src/4_bit_full_adder.v tb/4_bit_full_adder_tb.v -o sim/simv -lca -kdb -debug_access+all
 ```
@@ -24,8 +30,11 @@ vcs -full64 src/4_bit_full_adder.v tb/4_bit_full_adder_tb.v -o sim/simv -lca -kd
 	-kdb : Enable creation of kdb file (Knoweldge Data Base) during creation (Used for debugging and analysis)
 	-debug-access+all : Meaning that we should be able to access all the signals in the modules and submodules even.
  
-3. Run the simv file using sim/simv
-4. The .fsdb file is generated which is opened in verdi using
+3. ### Run the simulation
+Run the simv file using:
+>  sim/simv
+4. ### Open waveform in Verdi
+The .fsdb file is generated which is opened in verdi using
 ```
 verdi -ssf sim/*.fsdb -nologo
 the .fsdb file here is generated from running ./simv (simv generated using VCS)
@@ -33,4 +42,7 @@ the .fsdb file here is generated from running ./simv (simv generated using VCS)
 ```
 
 ## What I learned
-This project helped me learn the following things
+This project helped me understand
+- How to compile, simulated and debug Verilog Code using vcs and Verdi
+- How to work with Vivado purely through the command line for synthesis and bitstream generation.
+- How to use git for version control, and the importance of maintaining a consistent project directory structure for tool interoperability
