@@ -4,7 +4,6 @@ The main aim of this project was to get familiar with Synopsys VCS and Verdi, an
 In this setup:
 
 - VCS and Verdi are used for simulation and debugging.
-
 - Vivado is used only for synthesis, implementation, and bitstream generation for the target FPGA device.
 
 ## About the Files and Structure
@@ -23,16 +22,17 @@ First write the design and testbench files using a test editor, may it be gedit 
  Compile and generate executable using the following command
 ```
 vcs -full64 src/4_bit_full_adder.v tb/4_bit_full_adder_tb.v -o sim/simv -lca -kdb -debug_access+all
-```
 	-full64 : Running on 64bit system
 	-o : Specify output directory/file_name
 	-lca : Limited Customer Availability, other case is general availability meaning multiple people can change/access the file but here we dont need to generalize it
 	-kdb : Enable creation of kdb file (Knoweldge Data Base) during creation (Used for debugging and analysis)
 	-debug-access+all : Meaning that we should be able to access all the signals in the modules and submodules even.
- 
+ ```
 3. ### Run the simulation
-Run the simv file using:
->  sim/simv
+	Run the simv file using:
+```
+sim/simv
+```
 4. ### Open waveform in Verdi
 The .fsdb file is generated which is opened in verdi using
 ```
@@ -43,6 +43,7 @@ the .fsdb file here is generated from running ./simv (simv generated using VCS)
 
 ## What I learned
 This project helped me understand
+
 - How to compile, simulated and debug Verilog Code using vcs and Verdi
 - How to work with Vivado purely through the command line for synthesis and bitstream generation.
 - How to use git for version control, and the importance of maintaining a consistent project directory structure for tool interoperability
