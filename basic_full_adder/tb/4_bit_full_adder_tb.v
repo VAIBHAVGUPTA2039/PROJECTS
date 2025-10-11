@@ -4,7 +4,7 @@ module testbench;
 	reg c_in;
 	wire [3:0] sum;
 	wire c_out;
-	4_bit_full_adder FA1(a,b,c_in,sum,c_out);
+	four_bit_full_adder FA1(a,b,c_in,sum,c_out);
 	initial begin
 		$fsdbDumpfile("sim/4_bit_full_adder.fsdb");
 		$fsdbDumpvars();
