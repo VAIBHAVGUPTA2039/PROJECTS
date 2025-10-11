@@ -1,34 +1,81 @@
-# Simulation outputs
-sim/*.vcd
-sim/*.fsdb
-sim/*.log
-sim/simv*
-sim/work/
-
-# Vivado build outputs
-*.jou
+# ===================================
+# Generic build and simulation outputs
+# ===================================
 *.log
-*.str
-*.xpr
-*.runs/
+*.jou
+*.pb
+*.wdb
+*.fsdb
+*.vpd
+*.vcd
+*.db
+*.key
+*.dmp
+*.rpt
+*.out
+*.tcl
+*.xml
+*.sdf
+*.chk
+*.bak
+*.tmp
+*.swp
+*.swo
+*.nfs*
+*.chkpt
+*.gz
+*.dat
+*.list
+# Synopsys VCS / Verdi specific
+simv*
+csrc/
+DVEfiles/
+simv.daidir/
+*.vdb/
+verdiLog/
+ucli.key
+.vcsmx_rebuild
+.vcs_session.*
+novas.*
+*.fsdb.*
+verdi_*
+verdi/
+*.sdb
+# Vivado specific
 *.cache/
 *.hw/
 *.ip_user_files/
-*.srcs/
+*.runs/
 *.sim/
+*.srcs/
+*.xpr
+*.xsa
+*.xise
+*.str
+*.dcp
+*.bit
+*.bin
+*.ltx
+*.log
+*.jou
 *.xdc
-impl/*.bit
-impl/*.dcp
+*.xmsg
+*.xml
+*.prj
 
-# Verdi and VCS
-verdiLog/
-*.key
-*.vpd
-csrc/
-DVEfiles/
-
-# General
+# ===================================
+# System / Editor files
+# ===================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
 *.swp
-*.bak
-*.tmp
-*.DS_Store
+*.swo
+
+# ===================================
+# Python, scripts, or misc tools
+# ===================================
+__pycache__/
+*.pyc
+

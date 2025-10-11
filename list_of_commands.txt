@@ -1,0 +1,12 @@
+Below command to compile the verilog file and generate the simulation file simv
+>>> vcs -full64 src/4_bit_full_adder.v tb/4_bit_full_adder_tb.v -o sim/simv -lca -kdb -debug_access+all
+-full64 : Running on 64bit system
+-o : Specify output directory/file_name
+-lca : Limited Customer Availability, other case is general availability meaning multiple people can change/access the file but here we dont need to generalize it
+-kdb : Enable creation of kdb file (Knoweldge Data Base) during creation (Used for debugging and analysis)
+-debug-access+all : Meaning that we should be able to access all the signals in the modules and submodules even 
+
+Below command to open waveform using verdi
+>>> verdi -ssf sim/*.fsdb -nologo 
+the .fsdb file here is generated from running ./simv (simv generated using VCS)
+-ssf : Source Signal Format
