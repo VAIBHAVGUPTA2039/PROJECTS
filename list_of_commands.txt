@@ -10,3 +10,6 @@ Below command to open waveform using verdi
 >>> verdi -ssf sim/*.fsdb -nologo 
 the .fsdb file here is generated from running ./simv (simv generated using VCS)
 -ssf : Source Signal Format
+
+Vivado Commands:
+vivado -mode batch -source scripts/vivado_run.tcl

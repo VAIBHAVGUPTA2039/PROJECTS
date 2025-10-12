@@ -13,7 +13,6 @@
 *.dmp
 *.rpt
 *.out
-*.tcl
 *.xml
 *.sdf
 *.chk
@@ -58,11 +57,10 @@ verdi/
 *.ltx
 *.log
 *.jou
-*.xdc
 *.xmsg
 *.xml
 *.prj
-
+vivado_proj/
 # ===================================
 # System / Editor files
 # ===================================
